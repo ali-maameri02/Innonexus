@@ -38,6 +38,7 @@ function Login() {
     }
     return true;
   };
+  
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -71,14 +72,16 @@ function Login() {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-
+  
     const payload = {
       username: formData.username,
       password: formData.password,
       email: formData.email,
       role: formData.role,
     };
-
+  
+    console.log('Payload:', payload); // Log the payload
+  
     try {
       const response = await axios.post('https://straighthup.com/api/signup/', payload, {
         headers: {
@@ -103,12 +106,13 @@ function Login() {
       });
       Swal.fire({
         title: 'Signup Failed!',
-        text: error.response ? error.response.data.message : 'An error occurred during signup.',
+        text: error.response ? error.response.data : 'An error occurred during signup.',
         icon: 'error',
         confirmButtonText: 'OK'
       });
     }
   };
+  
 
   return (
     <div className="container">
