@@ -16,7 +16,7 @@ function Login() {
     username: '',
     password: '',
     email: '',
-    role: 'participant', // Default role
+    role: 'Participant', // Default role
   });
 
   const handleInputChange = (e) => {
@@ -34,14 +34,12 @@ function Login() {
         password: formData.password,
       });
       console.log('Login successful:', response.data);
-      // Handle successful login (e.g., save token, redirect)
       Swal.fire({
         title: 'Login Successful!',
         text: 'Welcome back!',
         icon: 'success',
         confirmButtonText: 'OK'
       }).then(() => {
-        // Redirect to another page after login if needed
         navigate('/dashboard'); // Adjust redirection as needed
       });
     } catch (error) {
@@ -62,17 +60,15 @@ function Login() {
         username: formData.username,
         email: formData.email,
         password: formData.password,
-        role: formData.role,
+        role: formData.role, // Ensure this matches the backend choices
       });
       console.log('Signup successful:', response.data);
-      // Show SweetAlert2 message
       Swal.fire({
         title: 'Success!',
         text: 'You will be a member of the InnoNexus family!',
         icon: 'success',
         confirmButtonText: 'OK'
       }).then(() => {
-        // Redirect to login page after the alert is closed
         navigate('/login');
       });
     } catch (error) {
@@ -99,10 +95,10 @@ function Login() {
             <button onClick={() => setIsLogin(true)} className={isLogin ? 'active' : ''}>Login</button>
             <button onClick={() => setIsLogin(false)} className={!isLogin ? 'active' : ''}>Sign Up</button>
           </span>
-          <p className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <p className="description">Welcom To Innonexus!</p>
           
           {isLogin ? (
-            <form className="visible" onSubmit={handleLoginSubmit}  method='post'>
+            <form className="visible" onSubmit={handleLoginSubmit} method='post'>
               <label htmlFor="username" className="label">User Name</label><br />
               <input
                 type="text"
