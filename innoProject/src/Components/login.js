@@ -103,6 +103,7 @@ function Login() {
         headers: error.response ? error.response.headers : 'N/A',
         data: error.response ? error.response.data : 'N/A',
         message: error.message,
+        stack: error.stack // Optional: to see where the error occurred
       });
       Swal.fire({
         title: 'Signup Failed!',
@@ -110,6 +111,8 @@ function Login() {
         icon: 'error',
         confirmButtonText: 'OK'
       });
+    
+    
     }
   };
   
