@@ -30,12 +30,12 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost",
     "http://localhost:3000",
     'http://127.0.0.1',
-       "https://straighthup.com/",
+       "https://straighthup.com",
   # For production
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://straighthup.com/",
+    "https://straighthup.com",
     "http://localhost",
         "http://localhost:3000",
 
