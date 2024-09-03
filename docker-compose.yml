@@ -3,10 +3,10 @@ version: "3.9"
 services:
   web:
     build:
-      context: "./inonexus_backend/Innonexus"  # Updated context to the root directory
+      context: "./inonexus_backend/Innonexus"
     command: gunicorn Innonexus.wsgi --bind 0.0.0.0:8000 --workers 3
     volumes:
-      - "./inonexus_backend/Innonexus:/home/straighthup/code"  # Ensure this path is correct
+      - "./inonexus_backend/Innonexus:/home/straighthup/code"
       - staticfiles:/home/straighthup/code/staticfiles
       - ./inonexus_backend/Innonexus/media:/home/straighthup/code/media
     ports:
@@ -14,7 +14,7 @@ services:
 
   frontend:
     build:
-      context: "./innoProject"  # Ensure this path is correct
+      context: "./innoProject"
     volumes:
       - front:/app/build/
 
@@ -22,7 +22,7 @@ services:
     image: nginx:stable-alpine
     ports:
       - "80:80"
-      - "443:8081"
+      - "8081:443"  # Changed port mapping for 443 to 8081
     volumes:
       - front:/var/www/straighthup/frontend
       - staticfiles:/var/www/straighthup/statics
