@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+*{ 
+    margin:0;
+    padding: 0;
+    font-family: "Cairo", sans-serif;
+}
+.container{
+    width: auto 20%;
+}
+.row1 {
+    text-align: center;
+    justify-content: center;  
+}
+.row1 .col2 {
+    padding: 100px 100px 0 100px;
+}
+
+
+.image-container img {
+    width: 80vh;
+    /* position: ; */
+    left: 2rem;
+}
+.btn-container {
+    background-color: #FECB82;
+    padding: 20px 40px;
+    border-radius: 40px;
+}
+.btn-container button {
+   border: none;
+   padding: 12px 40px;
+   border-radius: 40px;
+   margin: 0 5px;
+   background-color: #FEA930;
+   color: #fff;
+}
+
+.row1 .col .description {
+    color: #5B5B5B;
+    font-size: 1.3rem;
+    padding: 20px 50px;
+    margin-top: 10px;
+}
+.row1 .col .label{
+    font-size: 1.5rem;
+    float: left;
+}
+.row1 .col2 .styled-input{
+    border: none;
+    border: 1px solid  #FEA930 ;
+    padding: 20px 20px;
+    font-size: 1.3rem;
+    width: 100%;
+    border-radius: 40px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.styled-input::after {
+    content: '▼';
+    position: absolute;
+    right: 5rem;
+    top: calc(50% - 5px);
+    pointer-events: none;
+    color: #333;
+}
+.styled-input option {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 10px;
+}
+
+/* Change the color and background when an option is selected */
+.styled-input:focus option:checked {
+    background-color: #333;
+    color: #fff;
+}
+.left{
+    float: left;
+}
+.left input {
+    width: 40px;
+}
+.right{
+    float: right;
+}
+.right a {
+    text-decoration: none;
+    color: black;
+}
+
+.login-button{
+    color: #fff;
+    border:none;
+    background-color: #FEA930;
+    font-size: 1.8rem;
+    padding: 15px 0;
+    width: 100%;
+    border-radius: 40px;
+    margin: 10px 0;
+}
+.hidden{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: auto;
+        padding: 0 2%;
+    }
+
+    .row1 .col2 {
+        padding: 30px;
+    }
+
+    .image-container img {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .btn-container {
+        padding: 10px 20px;
+    }
+
+    .btn-container button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .row1 .col .description {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    .row1 .col .label {
+        font-size: 1rem;
+    }
+
+    .row1 .col2 .styled-input {
+        padding: 10px;
+        font-size: 0.9rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .login-button {
+        font-size: 1.2rem;
+    }
+}
+
+/* Small devices (phones, 576px and up) */
+@media (max-width: 576px) {
+    .container {
+        width: auto;
+        padding: 0 1%;
+    }
+  
+    .row1 .col2 {
+        padding: 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+        max-width: none;
+    }
+
+    .btn-container {
+        padding: 8px 15px;
+    }
+
+    .btn-container button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .row1 .col .description {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+
+    .row1 .col .label {
+        font-size: 0.9rem;
+    }
+
+    .row1 .col2 .styled-input {
+        padding: 8px;
+        font-size: 0.8rem;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .login-button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    
+}

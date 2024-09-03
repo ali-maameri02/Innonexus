@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+* {
+    font-family: "Cairo", sans-serif;
+}
+
+.container-custome {
+    margin: auto 0%;
+    width: 100vw;
+    /* margin-left: 3rem; */
+    position: fixed;
+    background-color: #fff;
+    z-index: 99999;
+    display: flex;
+    flex-direction: row;
+top:0;
+}
+
+.nav-style {
+    background-color: #fff;
+    width: 100vw;
+        margin-left: 3rem;
+
+}
+
+.logo-size {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.font-size {
+    font-size: 1.1rem !important;
+}
+
+.logo-span {
+    color: #FEA930;
+}
+
+.btn-custome {
+    padding: 10px 40px !important; /* Increased padding for larger buttons */
+    border-radius: 20px !important;
+    font-size: 1.1rem !important; /* Increase font size for better readability */
+}
+
+.list-items {
+    padding: 15px 20px !important;
+}
+
+.right-div {
+    display: flex;
+    align-items: center;
+}
+
+.right-div .inside-margin {
+    margin-left: 10px;
+}
+
+.hover-items:hover {
+    border-bottom: 1px solid #FEA930;
+}
+
+.animation {
+    animation: move 1s ease-in-out;
+}
+
+@keyframes move {
+    0% {
+        top: -200px;
+    }
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container-custome {
+        margin: auto 3%;
+    }
+
+    .logo-size {
+        font-size: 1.75rem;
+    }
+
+    .font-size {
+        font-size: 1rem !important;
+    }
+
+    .right-div {
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-custome {
+        margin: auto 2%;
+    }
+
+    .logo-size {
+        font-size: 1.5rem;
+    }
+
+    .font-size {
+        font-size: 0.9rem !important;
+    }
+
+    .right-div {
+        margin-left: 50px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-custome {
+        margin: auto 1%;
+    }
+
+    .logo-size {
+        font-size: 1.25rem;
+    }
+
+    .font-size {
+        font-size: 0.8rem !important;
+    }
+
+    .right-div {
+        margin-left: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .right-div .inside-margin {
+        margin-left: 5px;
+    }
+    
+    .list-items {
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-custome {
+        margin: auto;
+    }
+
+    .logo-size {
+        font-size: 1rem;
+    }
+
+    .font-size {
+        font-size: 0.7rem !important;
+    }
+
+    .right-div {
+        margin-left: 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .list-items {
+        display: block;
+        margin: 10px auto;
+    }
+}

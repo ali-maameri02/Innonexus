@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+*{
+    font-family: "Cairo" , sans-serif ;    
+    /* margin-left: 0; */
+}
+.container6 {
+    margin: auto  !important;
+    margin-bottom:200px !important;
+    
+    /* margin-left: 2rem; */
+}
+
+.container6 .row .col .title {
+    color: #2F327D;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 200px;
+}
+.container6 .row .col .description {
+    font-size: 1.5rem;
+    padding: 40px 80px ;
+    color: #b7b7b7;
+}
+@media (max-width: 768px) {
+    .container6 {
+        margin: auto 2%;
+        margin-bottom: 150px;
+    }
+
+    .container6 .row .col .title {
+        font-size: 1.5rem;
+        margin-top: 150px;
+    }
+
+    .container6 .row .col .description {
+        font-size: 1.2rem;
+        padding: 30px 50px;
+    }
+    .col .ready img{
+        width: 300px;
+    }
+}
+
+/* Small devices (phones, 576px and up) */
+@media (max-width: 576px) {
+    .container6 {
+        margin: auto 1%;
+        margin-bottom: 100px;
+    }
+
+    .container6 .row .col .title {
+        font-size: 1.2rem;
+        margin-top: 100px;
+    }
+
+    .container6 .row .col .description {
+        font-size: 1rem;
+        padding: 20px 20px;
+    }
+    .col .ready img{
+        width: 400px;
+    }
+}

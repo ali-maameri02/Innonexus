@@ -1,0 +1,274 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+*{
+    font-family: "Cairo" , sans-serif ;    
+}
+.container {
+    margin: auto 0% !important;
+  
+}
+.introHeader{
+    /* background-color: ; */
+    height: 80vh;
+    margin-bottom:280px;
+    position: relative;
+    margin-left: 3rem;
+}
+.container .col{
+    /* background-color: ; */
+}
+.container .col-container {
+    padding: 0px 100px 0 2px;
+    margin-top: -5rem;
+    margin-right: 10rem;
+}
+.container .col-container p {
+    font-size: 2rem; font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+}
+
+.butn-custome {
+    background-color: #FEA930 !important;
+    border: none !important;
+    padding: 10px 30px!important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    border-radius: 30px !important;
+}
+
+.poly-container{
+    background-color: #FEA930;
+    padding: 15px;
+    border-radius: 50%;
+}
+.second-btn-container {
+    /* margin-left:30px; */
+}
+.poly-container img{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    left: 4px;
+}
+.second-btn{
+    background-color: #fff !important;
+    color: black !important;
+    border: #FEA930 !important;
+    padding: 10px 30px!important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    border-radius: 30px !important;
+}
+
+.join-hover:hover {
+    background-color: #fff !important;
+    color: #FEA930 !important;
+    transition: .9s;
+}
+.span-hover:hover  .poly-container  img 
+    {
+        position: relative;
+        animation: mover2 .9s infinite ease-in-out ;
+    }
+.span-hover:hover .second-btn {
+    background-color: #FEA930 !important;
+    color: #fff !important;
+    transition: .5s;
+}
+.mover1 {
+    position: relative;
+    animation: move1 1s ease-in-out ;
+}
+@keyframes move1 {
+    0% {
+        left: -400px;
+    }
+    50%{
+        left: 70px;
+    }
+    100% {
+        left: 0;
+    }
+}
+@keyframes mover2 {
+    0% {
+        scale: 0.8;
+    }
+    100% {
+        scale:1.1;
+    }
+}
+.second-container {
+    position: relative;
+    animation: move3 .9 infinite ease-in-out ;
+}
+.second-container .prsn{
+    width: 120%;
+    position: relative;
+    animation: move3 1.2s  ease-in-out ;
+    display: block;
+}
+@keyframes move3 {
+    0%{
+        right: -500px;
+    }
+    50%{ right: 100px;}
+    100% { right: 0px;}
+}
+
+.second-container .Grp {
+   
+    position: relative;
+    top: -500px;
+}
+.second-container .grp1 {
+    left: 90px;
+    animation: firstGrp .8s ease-in-out;
+}
+.second-container .grp2 {
+    left: -150px;
+    top: -450px;
+    animation: firstGrp .8s ease-in-out;
+    
+}
+.second-container .grp3 {
+    left: 230px;
+}
+.second-container .grp4 {
+    left: -200px;
+    top: -450px;
+}
+@keyframes firstGrp {
+   0%{top: -1500px;}
+   50%{top: -200px;}
+   100%{
+   
+   }
+}
+
+
+@media (max-width: 1200px) {
+    .container .col-container {
+        padding: 80px 50px 0 10px;
+    }
+
+    .container .col-container p {
+        font-size: 1.5rem;
+        margin-bottom: 60px;
+    }
+
+    .butn-custome {
+        font-size: 1.3rem !important;
+    }
+
+    .second-btn {
+        font-size: 1.3rem !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .introHeader {
+        height: 70vh;
+        margin-bottom: 150px;
+    }
+
+    .container .col-container {
+        padding: 60px 30px 0 10px;
+    }
+
+    .container .col-container p {
+        font-size: 1.3rem;
+        margin-bottom: 50px;
+    }
+
+    .butn-custome, .second-btn {
+        font-size: 1.2rem !important;
+        padding: 8px 25px !important;
+    }
+
+    .poly-container img {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .introHeader {
+        height: 60vh;
+        margin-bottom: 100px;
+    }
+
+    .container .col-container {
+        padding: 40px 20px 0 5px;
+    }
+
+    .container .col-container p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+    }
+
+    .butn-custome, .second-btn {
+        font-size: 1.1rem !important;
+        padding: 6px 20px !important;
+    }
+
+    .poly-container img {
+        height: 20px;
+        width: 20px;
+    }
+    .second-container .prsn{
+        width: 90%;
+        position: relative;
+        animation: move3 1.2s  ease-in-out ;
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .introHeader {
+        height: 50vh;
+        margin-bottom: 50px;
+    }
+
+    .container .col-container {
+        padding: 20px 10px 0 5px;
+    }
+
+    .container .col-container p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .butn-custome, .second-btn {
+        font-size: 1rem !important;
+        padding: 5px 5px !important;
+    }
+
+    .poly-container img {
+        height: 15px;
+        width: 15px;
+    }
+    .second-container .prsn{
+        width: 90%;
+        position: relative;
+        animation: move3 1.2s  ease-in-out ;
+        display: block;
+        margin-top: 100px;
+    }
+    .second-container .grp3 img{
+        
+    }
+   .second-container .grp4 img{
+        width: 180px;
+    }
+   
+}
