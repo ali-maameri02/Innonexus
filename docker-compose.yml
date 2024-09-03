@@ -5,7 +5,7 @@ services:
     command: gunicorn Innonexus.wsgi --bind 0.0.0.0:8000 --workers 3
     volumes:
       - "./inonexus_backend/Innonexus:/home/straighthup/code"
-      - staticfiles:/home/straighthup/code/staticfiles
+      - staticfiles:/home/straighthup/code/static
       - "./inonexus_backend/Innonexus/media:/home/straighthup/code/media/"
     ports:
       - "8000:8000"
