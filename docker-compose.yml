@@ -10,7 +10,7 @@ services:
       - staticfiles:/home/straighthup/code/static
       - "./inonexus_backend/Innonexus/media:/home/straighthup/code/media/"
     ports:
-      - "8000:8080"
+      - "8000:8000"
 
   frontend:
     build:

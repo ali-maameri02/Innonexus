@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3ie9x1_ib7evgm-0@6ukrtt)4%@73a((k2^wz)8jv8-el07-91
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["straighthup.com","127.0.0.1","localhost"]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost",
     "http://localhost:3000",
