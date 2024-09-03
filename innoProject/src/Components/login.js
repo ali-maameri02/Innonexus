@@ -26,8 +26,23 @@ function Login() {
     });
   };
 
+  const validateForm = () => {
+    if (!formData.username || !formData.password || (isLogin ? false : !formData.email)) {
+      Swal.fire({
+        title: 'Validation Error',
+        text: 'Please fill all required fields.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      return false;
+    }
+    return true;
+  };
+
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     try {
       const response = await axios.post('https://straighthup.com/api/login/', {
         username: formData.username,
@@ -55,6 +70,8 @@ function Login() {
 
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     try {
       const response = await axios.post('https://straighthup.com/api/signup/', {
         username: formData.username,
@@ -95,7 +112,7 @@ function Login() {
             <button onClick={() => setIsLogin(true)} className={isLogin ? 'active' : ''}>Login</button>
             <button onClick={() => setIsLogin(false)} className={!isLogin ? 'active' : ''}>Sign Up</button>
           </span>
-          <p className="description">Welcom To Innonexus!</p>
+          <p className="description">Welcome To Innonexus!</p>
           
           {isLogin ? (
             <form className="visible" onSubmit={handleLoginSubmit} method='post'>
