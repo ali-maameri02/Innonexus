@@ -71,7 +71,12 @@ function Login() {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://straighthup.com/api/signup/', formData);
+      const response = await axios.post('https://straighthup.com/api/signup/', {
+        username: 'testuser',
+        email: 'test@example.com',
+        password: 'password123',
+        role: 'Participant', // Ensure this value is valid
+      });
       console.log('Signup successful:', response.data);
       Swal.fire({
         title: 'Success!',
@@ -91,6 +96,7 @@ function Login() {
       });
     }
   };
+  
   
 
   return (
