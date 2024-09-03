@@ -1,4 +1,3 @@
-version: "3.9"  # Utilisez une version plus récente si possible
 
 services:
   web:
