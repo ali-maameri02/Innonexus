@@ -3,19 +3,18 @@ version: "3.9"
 services:
   web:
     build:
-      context: "./inonexus_backend/Innonexus"  # Ensure this path is correct
+      context: "./inonexus_backend/Innonexus"  # Updated context to the root directory
     command: gunicorn Innonexus.wsgi --bind 0.0.0.0:8000 --workers 3
     volumes:
-      - "./inonexus_backend/Innonexus:/home/straighthup/code"
+      - "./inonexus_backend/Innonexus:/home/straighthup/code"  # Ensure this path is correct
       - staticfiles:/home/straighthup/code/staticfiles
       - ./inonexus_backend/Innonexus/media:/home/straighthup/code/media
     ports:
       - "8000:8000"
-      
 
   frontend:
     build:
-      context: "./innoProject"  # Path to the newly cloned frontend repository
+      context: "./innoProject"  # Ensure this path is correct
     volumes:
       - front:/app/build/
 
