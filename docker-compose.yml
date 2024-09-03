@@ -1,4 +1,4 @@
-version: "3.8"  # Utilisez une version plus récente si possible
+version: "3.9"  # Utilisez une version plus récente si possible
 
 services:
   web:
