@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   web:
     build:
@@ -23,8 +21,6 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - "./inonexus_backend/Innonexus:/home/straighthup/code"
-
       - front:/var/www/straighthup/frontend
       - staticfiles:/var/www/straighthup/static
       - mediafiles:/var/www/straighthup/media
