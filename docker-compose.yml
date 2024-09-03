@@ -3,12 +3,12 @@ version: "3.9"  # Utilisez une version plus récente si possible
 services:
   web:
     build:
-      context: "./inonexus_backend/innonexus_venv/Innonexus"
+      context: "./inonexus_backend/Innonexus"
     command: gunicorn Innonexus.wsgi --bind 0.0.0.0:8000 --workers 3
     volumes:
-      - "./inonexus_backend/innonexus_venv/Innonexus:/home/straighthup/code"
+      - "./inonexus_backend/Innonexus:/home/straighthup/code"
       - staticfiles:/home/straighthup/code/staticfiles
-      - "./inonexus_backend/innonexus_venv/Innonexus/media:/home/straighthup/code/media/"
+      - "./inonexus_backend/Innonexus/media:/home/straighthup/code/media/"
     ports:
       - "8000:8000"
 
