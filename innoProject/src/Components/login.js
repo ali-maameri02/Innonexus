@@ -27,7 +27,7 @@ function Login() {
   };
 
   const validateForm = () => {
-    if (!formData.username || !formData.password || (isLogin ? false : !formData.email)) {
+    if (!formData.username || !formData.password || (!isLogin && !formData.email)) {
       Swal.fire({
         title: 'Validation Error',
         text: 'Please fill all required fields.',
@@ -70,8 +70,17 @@ function Login() {
 
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
+    const payload = {
+      username: formData.username,
+      password: formData.password,
+      email: formData.email,
+      role: formData.role,
+    };
+
     try {
-      const response = await axios.post('https://straighthup.com/api/signup/', payload , {
+      const response = await axios.post('https://straighthup.com/api/signup/', payload, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -86,7 +95,6 @@ function Login() {
         navigate('/login');
       });
     } catch (error) {
-      // Log detailed error information
       console.error('Signup error:', {
         status: error.response ? error.response.status : 'N/A',
         headers: error.response ? error.response.headers : 'N/A',
@@ -101,8 +109,6 @@ function Login() {
       });
     }
   };
-  
-  
 
   return (
     <div className="container">
@@ -120,7 +126,7 @@ function Login() {
           <p className="description">Welcome To Innonexus!</p>
           
           {isLogin ? (
-            <form className="visible" onSubmit={handleLoginSubmit} method='post'>
+            <form className="visible" onSubmit={handleLoginSubmit}>
               <label htmlFor="username" className="label">User Name</label><br />
               <input
                 type="text"
@@ -156,7 +162,7 @@ function Login() {
               <button type="submit" className="login-button">Login</button>
             </form>
           ) : (
-            <form className="visible" onSubmit={handleSignupSubmit} method='post'>
+            <form className="visible" onSubmit={handleSignupSubmit}>
               <label htmlFor="email" className="label">Email Address</label><br />
               <input
                 type="email"
