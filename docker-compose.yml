@@ -22,8 +22,8 @@ services:
       - "443:443"
     volumes:
       - front:/var/www/straighthup/frontend
-      - staticfiles:/var/www/straighthup/static
-      - mediafiles:/var/www/straighthup/media
+      - staticfiles:/var/www/straighthup/code/static
+      - mediafiles:/var/www/straighthup/code/media
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - /etc/ssl/certs:/etc/ssl/certs:ro
       - /etc/ssl/private:/etc/ssl/private:ro
