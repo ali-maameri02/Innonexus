@@ -21,8 +21,8 @@ services:
   nginx:
     image: nginx:stable-alpine
     ports:
-      - "80:80"
-      - "8081:443"  # Changed port mapping for 443 to 8081
+      - "8080:80"   # Changed from 80:80 to 8080:80
+      - "8443:443"  # Changed from 443:8081 to 8443:443
     volumes:
       - front:/var/www/straighthup/frontend
       - staticfiles:/var/www/straighthup/statics
