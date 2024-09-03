@@ -3,7 +3,7 @@ version: "3.9"
 services:
   web:
     build:
-      context: "."  # Updated context to the root directory
+      context: "./inonexus_backend/Innonexus"  # Updated context to the root directory
     command: gunicorn Innonexus.wsgi --bind 0.0.0.0:8000 --workers 3
     volumes:
       - "./inonexus_backend/Innonexus:/home/straighthup/code"  # Ensure this path is correct
