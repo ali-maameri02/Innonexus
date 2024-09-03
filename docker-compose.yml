@@ -11,6 +11,7 @@ services:
       - ./inonexus_backend/Innonexus/media:/home/straighthup/code/media
     ports:
       - "8000:8000"
+      
 
   frontend:
     build:
