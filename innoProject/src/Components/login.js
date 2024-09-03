@@ -29,7 +29,7 @@ function Login() {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/login/', {
+      const response = await axios.post('https://straighthup.com/api/login/', {
         username: formData.username,
         password: formData.password,
       });
@@ -58,7 +58,7 @@ function Login() {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/signup/', {
+      const response = await axios.post('https://straighthup.com/api/signup/', {
         username: formData.username,
         email: formData.email,
         password: formData.password,
