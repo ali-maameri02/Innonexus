@@ -1,15 +1,13 @@
-version: "3.3"
+version: "3.8"  # Utilisez une version plus récente si possible
 
 services:
   web:
     build:
       context: "./inonexus_backend/innonexus_venv/Innonexus"
     command: gunicorn Innonexus.wsgi --bind 0.0.0.0:8000 --workers 3
-    # command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - "./inonexus_backend/innonexus_venv/Innonexus:/home/straighthup/code"
       - staticfiles:/home/straighthup/code/staticfiles
-      # - mediafiles:/home/straighthup/code/media
       - "./inonexus_backend/innonexus_venv/Innonexus/media:/home/straighthup/code/media/"
     ports:
       - "8000:8000"
@@ -23,7 +21,7 @@ services:
     image: nginx:stable-alpine
     ports:
       - "80:80"
-      - "443:8081"
+      - "443:443"  # Change this back to 443 if using SSL
     volumes:
       - front:/var/www/straighthup/frontend
       - staticfiles:/var/www/straighthup/statics
@@ -37,4 +35,3 @@ volumes:
   staticfiles:
   mediafiles:
   front:
-  # postgres:
