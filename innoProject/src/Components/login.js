@@ -70,10 +70,6 @@ function Login() {
 
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
-    if (!validateForm()) return;
-  
-    console.log('Signup payload:', formData); // Log the payload
-  
     try {
       const response = await axios.post('https://straighthup.com/api/signup/', formData);
       console.log('Signup successful:', response.data);
