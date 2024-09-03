@@ -13,10 +13,11 @@ services:
       - "8000:8000"
 
   frontend:
-    build: "./innoProject"
+    build:
+      context: "./innoProject"
     volumes:
       - front:/app/build/
-  
+
   nginx:
     image: nginx:stable-alpine
     ports:
@@ -28,7 +29,7 @@ services:
       # - mediafiles:/var/www/straighthup/media
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./ssl/server.straighthup.com.crt:/etc/ssl/certs/server.straighthup.com.crt:ro
-      - /home/Ali/Innonexus/ssl:/etc/ssl/private
+      - ./ssl/server.straighthup.com.key:/etc/ssl/private/server.straighthup.com.key:ro
     depends_on:
       - frontend
       - web
