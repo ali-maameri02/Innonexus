@@ -71,12 +71,7 @@ function Login() {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://straighthup.com/api/signup/', {
-        username: 'testuser',
-        email: 'test@example.com',
-        password: 'password123',
-        role: 'Participant', // Ensure this value is valid
-      });
+      const response = await axios.post('https://straighthup.com/api/signup/', formData);
       console.log('Signup successful:', response.data);
       Swal.fire({
         title: 'Success!',
@@ -87,7 +82,13 @@ function Login() {
         navigate('/login');
       });
     } catch (error) {
-      console.error('Signup error:', error.response ? error.response.data : error.message);
+      // Log detailed error information
+      console.error('Signup error:', {
+        status: error.response ? error.response.status : 'N/A',
+        headers: error.response ? error.response.headers : 'N/A',
+        data: error.response ? error.response.data : 'N/A',
+        message: error.message,
+      });
       Swal.fire({
         title: 'Signup Failed!',
         text: error.response ? error.response.data.message : 'An error occurred during signup.',
