@@ -9,8 +9,9 @@ services:
       - "./inonexus_backend/Innonexus:/home/straighthup/code"
       - staticfiles:/home/straighthup/code/staticfiles
       - ./inonexus_backend/Innonexus/media:/home/straighthup/code/media
-    ports:
-      - "8000:8000"
+    # Remove the ports section
+    # ports:
+    #   - "8000:8000"
 
   frontend:
     build:
@@ -21,8 +22,8 @@ services:
   nginx:
     image: nginx:stable-alpine
     ports:
-      - "8080:80"   # Changed from 80:80 to 8080:80
-      - "8443:443"  # Changed from 443:8081 to 8443:443
+      - "8080:80"   # Nginx listens on 8080 on the host
+      - "8443:443"  # SSL traffic, change as needed
     volumes:
       - front:/var/www/straighthup/frontend
       - staticfiles:/var/www/straighthup/statics
