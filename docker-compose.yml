@@ -15,8 +15,11 @@ services:
   frontend:
     build:
       context: "./innoProject"
+    ports:
+      - "8080:80"
     volumes:
       - front:/app/build/
+      
 
   nginx:
     image: nginx:stable-alpine
