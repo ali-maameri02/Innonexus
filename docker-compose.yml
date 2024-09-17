@@ -19,7 +19,6 @@ services:
       - "80:80"
     volumes:
       - front:/app/build/
-      
 
   nginx:
     image: nginx:stable-alpine
