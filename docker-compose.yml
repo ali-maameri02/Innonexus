@@ -15,7 +15,8 @@ services:
   frontend:
     build:
       context: "./innoProject"
-    
+    ports:
+      - "80:80"
     volumes:
       - front:/app/build/
       
