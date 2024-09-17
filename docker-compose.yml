@@ -21,8 +21,9 @@ services:
   nginx:
     image: nginx:stable-alpine
     ports:
-      - "8443:8443"  # Ensure HTTPS is correctly configured and accessible
       - "80:80" 
+      - "443:443"  # Ensure HTTPS is correctly configured and accessible
+
     volumes:
       - front:/var/www/straighthup/frontend
       - staticfiles:/var/www/straighthup/static
