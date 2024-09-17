@@ -15,8 +15,7 @@ services:
   frontend:
     build:
       context: "./innoProject"
-    ports:
-      - "8080:80"
+    
     volumes:
       - front:/app/build/
       
@@ -24,7 +23,7 @@ services:
   nginx:
     image: nginx:stable-alpine
     ports:
-      - "8080:80"
+      - "8081:80"
       - "8444:443"
     volumes:
       - front:/var/www/straighthup/frontend
