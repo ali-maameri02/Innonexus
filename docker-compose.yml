@@ -22,7 +22,7 @@ services:
     image: nginx:stable-alpine
     ports:
       - "8080:80"
-      - "8443:443"
+      - "8444:443"
     volumes:
       - front:/var/www/straighthup/frontend
       - staticfiles:/var/www/straighthup/static
