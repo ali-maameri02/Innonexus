@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import image1 from './imgs/img1.png';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'; // Import SweetAlert2
-import './login.css';
-
+import '../index.css';
+import image1 from '../assets/prsn.png'; // Import the image used in the design
+import { Slide } from 'react-awesome-reveal';
 function Login() {
   const location = useLocation();
   const navigate = useNavigate(); // Hook for navigation
@@ -32,13 +30,12 @@ function Login() {
         title: 'Validation Error',
         text: 'Please fill all required fields.',
         icon: 'error',
-        confirmButtonText: 'OK'
+        confirmButtonText: 'OK',
       });
       return false;
     }
     return true;
   };
-  
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -54,7 +51,7 @@ function Login() {
         title: 'Login Successful!',
         text: 'Welcome back!',
         icon: 'success',
-        confirmButtonText: 'OK'
+        confirmButtonText: 'OK',
       }).then(() => {
         navigate('/dashboard'); // Adjust redirection as needed
       });
@@ -64,7 +61,7 @@ function Login() {
         title: 'Login Failed!',
         text: error.response ? error.response.data.message : 'An error occurred during login.',
         icon: 'error',
-        confirmButtonText: 'OK'
+        confirmButtonText: 'OK',
       });
     }
   };
@@ -72,157 +69,141 @@ function Login() {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-  
+
     const payload = {
       username: formData.username,
       password: formData.password,
       email: formData.email,
       role: formData.role,
     };
-  
-    console.log('Payload:', payload); // Log the payload
-  
+
     try {
       const response = await axios.post('https://straighthup.com/api/signup/', payload, {
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
       });
       console.log('Signup successful:', response.data);
       Swal.fire({
         title: 'Success!',
-        text: 'You will be a member of the InnoNexus family!',
+        text: 'You are now part of the InnoNexus family!',
         icon: 'success',
-        confirmButtonText: 'OK'
+        confirmButtonText: 'OK',
       }).then(() => {
         navigate('/login');
       });
     } catch (error) {
-      console.error('Signup error:', {
-        status: error.response ? error.response.status : 'N/A',
-        headers: error.response ? error.response.headers : 'N/A',
-        data: error.response ? error.response.data : 'N/A',
-        message: error.message,
-        stack: error.stack // Optional: to see where the error occurred
-      });
+      console.error('Signup error:', error.response ? error.response.data : 'An error occurred during signup.');
       Swal.fire({
         title: 'Signup Failed!',
         text: error.response ? error.response.data : 'An error occurred during signup.',
         icon: 'error',
-        confirmButtonText: 'OK'
+        confirmButtonText: 'OK',
       });
-    
-    
     }
   };
-  
-  
 
   return (
-    <div className="container">
-      <Row className="row1">
-        <Col className="col1">
-          <span className="image-container">
-            <img src={image1} alt="Login visual" />
-          </span>
-        </Col>
-        <Col className="col2">
-          <span className="btn-container">
-            <button onClick={() => setIsLogin(true)} className={isLogin ? 'active' : ''}>Login</button>
-            <button onClick={() => setIsLogin(false)} className={!isLogin ? 'active' : ''}>Sign Up</button>
-          </span>
-          <p className="description">Welcome To Innonexus!</p>
-          
-          {isLogin ? (
-            <form className="visible" onSubmit={handleLoginSubmit}>
-              <label htmlFor="username" className="label">User Name</label><br />
-              <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder="Enter your username"
-                className="styled-input"
-                value={formData.username}
-                onChange={handleInputChange}
-              /><br />
-              
-              <label htmlFor="password" className="label">Password</label><br />
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Enter your password"
-                className="styled-input"
-                value={formData.password}
-                onChange={handleInputChange}
-              /><br />
-              
-              <span className="display-block">
-                <span className="left">
-                  <input type="checkbox" id="remember" name="remember" />
-                  <label htmlFor="remember">Remember Me</label>
-                </span>
-                <span className="right">
-                  <a href="#">Forget Password?</a>
-                </span>
-              </span>
-              
-              <button type="submit" className="login-button">Login</button>
-            </form>
-          ) : (
-            <form className="visible" onSubmit={handleSignupSubmit}>
-              <label htmlFor="email" className="label">Email Address</label><br />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                className="styled-input"
-                value={formData.email}
-                onChange={handleInputChange}
-              /><br />
-              
-              <label htmlFor="username" className="label">User Name</label><br />
-              <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder="Enter your username"
-                className="styled-input"
-                value={formData.username}
-                onChange={handleInputChange}
-              /><br />
-              
-              <label htmlFor="role" className="label">Your Role</label><br />
-              <select
-                id="role"
-                name="role"
-                className="styled-input"
-                value={formData.role}
-                onChange={handleInputChange}
-              >
-                <option value="Participant">Participant</option>
-                <option value="Company">Company</option>
-                <option value="Mentor">Mentor</option>
-              </select><br />
-              
-              <label htmlFor="password" className="label">Password</label><br />
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Enter your password"
-                className="styled-input"
-                value={formData.password}
-                onChange={handleInputChange}
-              /><br />
-              
-              <button type="submit" className="login-button">Register</button>
-            </form>
-          )}
-        </Col>
-      </Row>
-    </div>
+    <Slide>
+    <div className="login-container">
+      <div className="login-content">
+        <Slide direction='left' >
+        <div className="image-section">
+          <img src={image1} alt="Login visual" className="login-image" />
+        </div></Slide>
+        <div className="form-section">
+          <div className="form-header">
+            <button
+              className={isLogin ? 'form-toggle active' : 'form-toggle'}
+              onClick={() => setIsLogin(true)}
+            >
+              Login
+            </button>
+            <button
+              className={!isLogin ? 'form-toggle active' : 'form-toggle'}
+              onClick={() => setIsLogin(false)}
+            >
+              Sign Up
+            </button>
+          </div>
+          <div className="form-body">
+            {isLogin ? (
+              <Slide direction='right'>
+              <form onSubmit={handleLoginSubmit}>
+                <label htmlFor="username" className="input-label">Username</label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Enter your username"
+                  className="styled-input"
+                  value={formData.username}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="password" className="input-label">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  className="styled-input"
+                  value={formData.password}
+                  onChange={handleInputChange}
+                />
+                <button type="submit" style={{backgroundColor:'#EFCC3D',color:'black'}} className="submit-button">Login</button>
+              </form></Slide>
+            ) : (
+              <Slide direction='right'>
+              <form onSubmit={handleSignupSubmit}>
+                <label htmlFor="email" className="input-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  className="styled-input"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="username" className="input-label">Username</label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Enter your username"
+                  className="styled-input"
+                  value={formData.username}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="role" className="input-label">Role</label>
+                <select
+                  id="role"
+                  name="role"
+                  className="styled-input"
+                  value={formData.role}
+                  onChange={handleInputChange}
+                >
+                  <option value="Participant">Participant</option>
+                  <option value="Company">Company</option>
+                  <option value="Mentor">Mentor</option>
+                </select>
+                <label htmlFor="password" className="input-label">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  className="styled-input"
+                  value={formData.password}
+                  onChange={handleInputChange}
+                />
+                <button type="submit" style={{backgroundColor:'#EFCC3D',color:'black'}} className="submit-button">Sign Up</button>
+              </form></Slide>
+            )}
+          </div>
+        </div>
+      </div>
+    </div></Slide>
   );
 }
 

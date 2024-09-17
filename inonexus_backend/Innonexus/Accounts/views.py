@@ -20,10 +20,10 @@ class RegisterUserView(generics.CreateAPIView):
             token, created = Token.objects.get_or_create(user=user)
             return Response({'token': token.key, 'message': 'Registration successful'}, status=status.HTTP_201_CREATED)
         else:
-            print("Invalid data received:")
-            print(request.data)
-            print("Serializer errors:")
-            print(serializer.errors)
+            # print("Invalid data received:")
+            # print(request.data)
+            # print("Serializer errors:")
+            # print(serializer.errors)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
