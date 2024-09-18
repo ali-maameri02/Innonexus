@@ -15,8 +15,8 @@ services:
       - DEBUG="false"
 
   frontend:
-    build: ./innoProject
-      
+    build:
+      context: "./innoProject"
     volumes:
       - front:/app/build/
 
