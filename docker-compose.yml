@@ -29,8 +29,8 @@ services:
       - staticfiles:/var/www/straighthup/static
       - mediafiles:/var/www/straighthup/media
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./Innonexus/ssl/server.straighthup.com.pem:/etc/pki/tls/cert.pem:ro
-      - ./Innonexus/ssl/server.straighthup.private.pem:/etc/ssl/private/ftpd-rsa-key.pem:ro
+      - ./Innonexus/ssl/server.straighthup.com.crt:/etc/pki/tls/certs/server.straighthup.com.crt:ro
+      - ./Innonexus/ssl/server.straighthup.com.key:/etc/ssl/private/server.straighthup.com.key:ro
     depends_on:
       - frontend
       - web
