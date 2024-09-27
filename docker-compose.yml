@@ -29,8 +29,9 @@ services:
       - staticfiles:/var/www/straighthup/static
       - mediafiles:/var/www/straighthup/media
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./Innonexus/ssl/server.straighthup.com.crt:/etc/ssl/certs/server.straighthup.com.crt:ro
-      - ./Innonexus/ssl/server.straighthup.com.key:/etc/ssl/private/server.straighthup.com.key:ro
+      # Update these lines to point to your .pem files
+      -./Innonexus/ssl/server.straighthup.com.pem:/etc/ssl/certs/server.straighthup.com.pem:ro
+      -./Innonexus/ssl/server.straighthup.private.pem:/etc/ssl/private/server.straighthup.private.pem:ro
     depends_on:
       - frontend
       - web
