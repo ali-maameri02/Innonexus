@@ -1,32 +1,15 @@
 import React from 'react';
-import logo from '../assets/logo.png'
+import logo from '../assets/logos.png'
 const Footer = () => {
 return (
 <footer style={styles.footer}>
 <div style={styles.logoSection}>
 <h1 style={styles.logo}><img src={logo} alt="straight_hup logo" srcset="" /></h1>
-<p style={styles.copyright}>ستريت_هوب
- 2024</p>
+
 </div>
 <div style={styles.linksContainer}>
-<div style={styles.column}>
-<h3 style={styles.columnTitle}>الصفحات</h3>
-<ul style={styles.list}>
-<li><a href="/" style={styles.link}>الرئيسية</a></li>
-<li><a href="/subjects" style={styles.link}>المواضيع</a></li>
-<li><a href="/about" style={styles.link}>من نحن</a></li>
-<li><a href="/signup" style={styles.link}>إنشاء حساب</a></li>
-<li><a href="/signin" style={styles.link}>تسجيل الدخول</a></li>
-</ul>
-</div>
-<div style={styles.column}>
-<h3 style={styles.columnTitle}>التواصل الاجتماعي</h3>
-<ul style={styles.list}>
-<li><a href="https://twitter.com" style={styles.link}>تويتر</a></li>
-<li><a href="https://facebook.com" style={styles.link}>فيسبوك</a></li>
-<li><a href="https://instagram.com" style={styles.link}>إنستغرام</a></li>
-</ul>
-</div>
+
+
 <div style={styles.column}>
 <h3 style={styles.columnTitle}>الدعم</h3>
 <ul style={styles.list}>
@@ -51,7 +34,8 @@ display: 'flex',
 flexDirection: 'row',
 justifyContent: 'space-between',
 alignItems: 'center',
-padding: '2rem',
+padding: '0 2rem',
+
 backgroundColor: '#f9f7f0',
 color: '#333',
 

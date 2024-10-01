@@ -26,8 +26,9 @@ const styles = {
     alignItems: 'center',
     textAlign: 'center',
     padding: '40px 20px',
+    padding_bottom:'0',
     backgroundColor: '#f9f7f0',
-    minHeight: '100vh',
+    minHeight: '50vh',
   },
   textContainer: {
     maxWidth: '600px',

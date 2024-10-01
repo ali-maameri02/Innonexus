@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png'
+import logo from '../assets/logos.png'
 
 import { Slide } from 'react-awesome-reveal';
 import NavLink from "react-bootstrap/esm/NavLink";
@@ -17,7 +17,7 @@ const NavBar = () => {
       <Slide direction="down" className="Navigation">
         <Navbar variant="" bg="none" className="navbar" expand="lg">
           <Container fluid>
-            <Navbar.Brand href="/"> <img src={logo} width={24} alt="" srcset="" /> ستريت_هوب</Navbar.Brand>
+            <Navbar.Brand href="/"> <img src={logo} width={200} height={70}  alt="" srcset="" /></Navbar.Brand>
 
             <Navbar.Toggle aria-controls="navbar-dark-example" />
             <Navbar.Collapse id="navbar-dark-example" className="navitems">
@@ -40,10 +40,10 @@ const NavBar = () => {
 
               <div className="buttons">
                 <Link to="/login">
-                  <Button variant="light" className="btn">تسجيل الدخول</Button>
+                  <Button variant="light" className="btn ">تسجيل الدخول</Button>
                 </Link>
                 <Link to="/signup">
-                  <Button variant="light" className="btn">إنشاء حساب</Button>
+                  <Button variant="light" className="btn bg-white">إنشاء حساب</Button>
                 </Link>
               </div>
             </Navbar.Collapse>

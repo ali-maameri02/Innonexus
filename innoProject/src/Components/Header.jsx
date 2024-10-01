@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import { Slide } from "react-awesome-reveal";
 const Header = () =>{
     return(
-        <header>
-        <div className="title " >
+        <header >
+        <div className="title " style={{direction:'rtl'}} >
             <Slide duration={1000}>
             <h1>
             مجتمعات مبتكرة لحلول تطوير الأعمال            </h1></Slide>
@@ -16,15 +16,13 @@ const Header = () =>{
             <p className="lead">
             حلول رقمية متقدمة، مجتمعات تعاونية متكاملة، وبنية تحتية متطورة تعمل معًا لمواجهة تحديات التحول الرقمي.
             </p></Slide>
-            <Link to="/signup" className="d-flex flex-row justify-content-end text-decoration-none" >
-
-<Button variant="light" className="btn mb-5 w-25" style={{backgroundColor:'#EFCC3D'}}>ابدأ </Button>
-</Link>
-            <div className="inputgroup">
+          
+            <div className="inputgroup shadow-sm">
                 <Search className="seacrhicon"/>
-                <input type="search" name="search" id="search" />
-                <Button variant="primary" className="btn">Search</Button>
+                <input type="search" name="search" id="search" placeholder="ما الذي تريد البحث عنه؟"/>
+                <Button variant="primary" className="btn">البحث</Button>
             </div>
+            <p className="d-flex flex-row align-items-start justify-content-start w-100 mt-3 lead" style={{direction:'rtl'}} > لقد جمعنا بالفعل  <strong>+3000</strong>  تحدي من <strong>50</strong>  شركة</p>
         </div>
         <div className="background-header">
         <Slide duration={1000} direction="right" >

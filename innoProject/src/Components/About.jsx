@@ -4,7 +4,7 @@ import { Slide } from "react-awesome-reveal";
 
 const About = () =>{
     return(
-        <div className="About">
+        <div className="About ">
         <div className="title " >
             <Slide direction="left">
         <h1>

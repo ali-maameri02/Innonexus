@@ -1,5 +1,6 @@
 *{
   background-color: #f9f7f0;
+  
 }
 
 .home-page {
@@ -71,7 +72,7 @@ z-index: 99999999999;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 20vw;
+  width: 12vw;
 }
 .Navigation .btn{
 /* width: 8vw; */
@@ -94,7 +95,7 @@ border-radius: 8px;
   /* font-size: 10rem; */
 }
 .title h1{
-  font-size: 4rem;
+  font-size: 2rem;
 }
 .title p{
   width: 30rem;
@@ -108,7 +109,7 @@ header {
   align-items: start;
   /* width: 80vw; */
 }
-.background-header, .About img{
+.background-header img, .About img{
   background-color: transparent;
   animation: headeranimation infinite 5s alternate-reverse ;
 }
@@ -146,11 +147,11 @@ border: none;
 
 .categories-section{
   z-index: -1;
-  animation: categories-section-animation  5s   alternate-reverse ;
+  animation: categories-section-animation  3s   alternate-reverse ;
 
 }
 .categories-section .container{
-  animation: categorie-container-animation 10s  alternate-reverse ;
+  animation: categorie-container-animation 15s  alternate-reverse ;
 
 }
 section .card{
