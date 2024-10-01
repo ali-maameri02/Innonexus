@@ -1,5 +1,5 @@
 import React from "react";
-import baground from '../assets/39256845-removebg-preview.png'
+import baground from '../assets/Sandy illustrations_business vol.2_47.png'
 import { Slide } from "react-awesome-reveal";
 
 const About = () =>{

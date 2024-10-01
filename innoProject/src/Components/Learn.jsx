@@ -1,5 +1,5 @@
 import React from "react";
-import areyou from '../assets/areyou.png'
+import areyou from '../assets/Sandy illustrations_business vol.2_24.png'
 import { Slide } from "react-awesome-reveal";
 
 const Learn =()=>{

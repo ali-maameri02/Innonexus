@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'; // Import SweetAlert2
 import '../index.css';
-import image1 from '../assets/prsn.png'; // Import the image used in the design
+import image1 from '../assets/Sandy illustrations_business vol.2_44.png'; // Import the image used in the design
 import { Slide } from 'react-awesome-reveal';
 function Login() {
   const location = useLocation();
@@ -105,13 +105,14 @@ function Login() {
 
   return (
     <Slide>
-    <div className="login-container">
-      <div className="login-content">
-        <Slide direction='left' >
+    <div className="login-container d-flex flex-row ">
+    <Slide direction='left' >
         <div className="image-section">
           <img src={image1} alt="Login visual" className="login-image" />
         </div></Slide>
-        <div className="form-section">
+      <div className="login-content">
+
+        <div className="form-section ">
           <div className="form-header">
             <button
               className={isLogin ? 'form-toggle active' : 'form-toggle'}

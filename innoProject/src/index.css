@@ -221,11 +221,12 @@ section .card{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 5rem;
 }
 
 .login-image {
-  width: 80%;
-  max-width: 400px; /* Adjust for responsiveness */
+  width: 40vw;
+  max-width: 40vw; /* Adjust for responsiveness */
 }
 
 /* Form section */

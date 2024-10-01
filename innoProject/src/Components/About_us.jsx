@@ -1,6 +1,10 @@
 import React from "react";
-import areyou from '../assets/areyou.png';
-import dev from '../assets/360_F_478083183_6CQZKaiML4lyTBKOx450KCRkU0aExkVH-removebg-preview.png';
+import areyou from '../assets/Sandy illustrations_business vol.2_24.png';
+// import dev from '../assets/360_F_478083183_6CQZKaiML4lyTBKOx450KCRkU0aExkVH-removebg-preview.png';
+import dev from '../assets/Sandy illustrations_business vol.2_30.png';
+import dev2 from '../assets/360_F_478083183_6CQZKaiML4lyTBKOx450KCRkU0aExkVH-removebg-preview.png';
+import dev3 from '../assets/360_F_478083183_6CQZKaiML4lyTBKOx450KCRkU0aExkVH-removebg-preview.png';
+import dev4 from '../assets/360_F_478083183_6CQZKaiML4lyTBKOx450KCRkU0aExkVH-removebg-preview.png';
 import '../index.css';
 import { Slide } from "react-awesome-reveal";
 const Aboutus = () => {
@@ -68,22 +72,22 @@ const Aboutus = () => {
           هنا، تجد منصة مفتوحة لجميع الأفكار والخبرات والابتكارات، سواء كانت فكرة بسيطة أو مشروعًا ضخمًا. نقدم لك مجموعة متنوعة من المجالات.
         </p></Slide>
       </div>
-      <div className="background-header">
+      <div className="background-header m-0">
         <img src={areyou} width={'500'} alt="are you" />
       </div>
-      <section className="py-5">
+      <section className="py-5 pt-0">
         <div className="container text-center">
           <div className="d-flex flex-row flex-wrap justify-content-between ">
             {categories.map((category, index) => (
-                              <Slide direction="up"  className="col-lg-5  col-md-6 col-sm-12  "  key={index} style={{margin:'5rem 1rem', height:'80vh'}}>
+                              <Slide direction="up"  className="col-lg-5  col-md-6 col-sm-12 bg-white "  key={index} style={{margin:'2rem 1rem', height:'80vh'}}>
 
-                <div className=" border-0 shadow-sm pb-5 h-100 " >
-                  <div className="card-body d-flex flex-column align-items-center p-3">
-                    <img src={dev} alt="" width={'200'} height={'90'} className="mb-3" />
-                    <h5 className="card-title">{category.title}</h5>
-                    <ul className="card-text text-right flex-grow-1" style={{ padding: "0", listStyleType: "none" }}>
+                <div className=" border-0 shadow-sm pb-5 h-100 bg-white" >
+                  <div className="card-body d-flex flex-column align-items-center p-3 bg-white">
+                    <img src={dev} alt="" width={'200'} height={'200'} className="mb-3 bg-white" />
+                    <h5 className="card-title bg-white">{category.title}</h5>
+                    <ul className="card-text text-right flex-grow-1 bg-white" style={{ padding: "0", listStyleType: "none" }}>
                       {category.items.map((item, idx) => (
-                        <li key={idx}>{item}</li>
+                        <li key={idx} className="bg-white">{item}</li>
                       ))}
                     </ul>
                   </div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import cerc1 from '../assets/cerc1.png'
-import cerc2 from '../assets/cerc2.png'
+import cerc1 from '../assets/Sandy illustrations_business vol.2_05.png'
+import cerc2 from '../assets/Sandy illustrations_business vol.2_06.png'
 const LearningSection = () => {
   return (
     <section style={styles.container}>
@@ -25,7 +25,7 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
-    padding: '40px 20px',
+    padding: '40px 50px',
     padding_bottom:'0',
     backgroundColor: '#f9f7f0',
     minHeight: '50vh',
@@ -60,16 +60,16 @@ const styles = {
   imageContainer: {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '100%',
+    width: '100vw',
     maxWidth: '800px',
   },
   leftImage: {
-    width: '100px',
+    width: '20rem',
     objectFit: 'contain',
     Animation:'  animation: headeranimation infinite 5s alternate-reverse     '
   },
   rightImage: {
-    width: '100px',
+    width: '20rem',
     objectFit: 'contain',
   },
   

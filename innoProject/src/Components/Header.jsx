@@ -1,5 +1,5 @@
 import React from "react";
-import baground from '../assets/arabian-man.png'
+import baground from '../assets/Sandy illustrations_business vol.2_27.png'
 import { Search } from "react-bootstrap-icons";
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
