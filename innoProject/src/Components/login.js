@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2'; // Import SweetAlert2
+import Swal from 'sweetalert2'; // استيراد SweetAlert2
 import '../index.css';
-import image1 from '../assets/Sandy illustrations_business vol.2_44.png'; // Import the image used in the design
+import image1 from '../assets/Sandy illustrations_business vol.2_44.png'; // استيراد الصورة المستخدمة في التصميم
 import { Slide } from 'react-awesome-reveal';
+
 function Login() {
   const location = useLocation();
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate(); // استخدام هوك للتنقل
   const isLoginPath = location.pathname === '/login';
   const [isLogin, setIsLogin] = useState(isLoginPath);
   const [formData, setFormData] = useState({
     username: '',
     password: '',
     email: '',
-    role: 'Participant', // Default role
+    role: 'Participant', // الدور الافتراضي
   });
 
   const handleInputChange = (e) => {
@@ -27,10 +28,10 @@ function Login() {
   const validateForm = () => {
     if (!formData.username || !formData.password || (!isLogin && !formData.email)) {
       Swal.fire({
-        title: 'Validation Error',
-        text: 'Please fill all required fields.',
+        title: 'خطأ في التحقق',
+        text: 'يرجى ملء جميع الحقول المطلوبة.',
         icon: 'error',
-        confirmButtonText: 'OK',
+        confirmButtonText: 'موافق',
       });
       return false;
     }
@@ -46,22 +47,22 @@ function Login() {
         username: formData.username,
         password: formData.password,
       });
-      console.log('Login successful:', response.data);
+      console.log('تم تسجيل الدخول بنجاح:', response.data);
       Swal.fire({
-        title: 'Login Successful!',
-        text: 'Welcome back!',
+        title: 'تم تسجيل الدخول بنجاح!',
+        text: 'مرحبًا بعودتك!',
         icon: 'success',
-        confirmButtonText: 'OK',
+        confirmButtonText: 'موافق',
       }).then(() => {
-        navigate('/dashboard'); // Adjust redirection as needed
+        navigate('/dashboard'); // قم بتعديل التوجيه حسب الحاجة
       });
     } catch (error) {
-      console.error('Login error:', error.response ? error.response.data : error.message);
+      console.error('خطأ في تسجيل الدخول:', error.response ? error.response.data : error.message);
       Swal.fire({
-        title: 'Login Failed!',
-        text: error.response ? error.response.data.message : 'An error occurred during login.',
+        title: 'فشل تسجيل الدخول!',
+        text: error.response ? error.response.data.message : 'حدث خطأ أثناء تسجيل الدخول.',
         icon: 'error',
-        confirmButtonText: 'OK',
+        confirmButtonText: 'موافق',
       });
     }
   };
@@ -83,128 +84,132 @@ function Login() {
           'Content-Type': 'application/json',
         },
       });
-      console.log('Signup successful:', response.data);
+      console.log('تم التسجيل بنجاح:', response.data);
       Swal.fire({
-        title: 'Success!',
-        text: 'You are now part of the InnoNexus family!',
+        title: 'نجاح!',
+        text: 'أنت الآن جزء من عائلة InnoNexus!',
         icon: 'success',
-        confirmButtonText: 'OK',
+        confirmButtonText: 'موافق',
       }).then(() => {
         navigate('/login');
       });
     } catch (error) {
-      console.error('Signup error:', error.response ? error.response.data : 'An error occurred during signup.');
+      console.error('خطأ في التسجيل:', error.response ? error.response.data : 'حدث خطأ أثناء التسجيل.');
       Swal.fire({
-        title: 'Signup Failed!',
-        text: error.response ? error.response.data : 'An error occurred during signup.',
+        title: 'فشل التسجيل!',
+        text: error.response ? error.response.data : 'حدث خطأ أثناء التسجيل.',
         icon: 'error',
-        confirmButtonText: 'OK',
+        confirmButtonText: 'موافق',
       });
     }
   };
 
   return (
     <Slide>
-    <div className="login-container d-flex flex-row ">
-    <Slide direction='left' >
-        <div className="image-section">
-          <img src={image1} alt="Login visual" className="login-image" />
-        </div></Slide>
-      <div className="login-content">
-
-        <div className="form-section ">
-          <div className="form-header">
-            <button
-              className={isLogin ? 'form-toggle active' : 'form-toggle'}
-              onClick={() => setIsLogin(true)}
-            >
-              Login
-            </button>
-            <button
-              className={!isLogin ? 'form-toggle active' : 'form-toggle'}
-              onClick={() => setIsLogin(false)}
-            >
-              Sign Up
-            </button>
+      <div className="login-container d-flex flex-row ">
+        <Slide direction='left'>
+          <div className="image-section">
+            <img src={image1} alt="عرض تسجيل الدخول" className="login-image" />
           </div>
-          <div className="form-body">
-            {isLogin ? (
-              <Slide direction='right'>
-              <form onSubmit={handleLoginSubmit}>
-                <label htmlFor="username" className="input-label">Username</label>
-                <input
-                  type="text"
-                  id="username"
-                  name="username"
-                  placeholder="Enter your username"
-                  className="styled-input"
-                  value={formData.username}
-                  onChange={handleInputChange}
-                />
-                <label htmlFor="password" className="input-label">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Enter your password"
-                  className="styled-input"
-                  value={formData.password}
-                  onChange={handleInputChange}
-                />
-                <button type="submit" style={{backgroundColor:'#EFCC3D',color:'black'}} className="submit-button">Login</button>
-              </form></Slide>
-            ) : (
-              <Slide direction='right'>
-              <form onSubmit={handleSignupSubmit}>
-                <label htmlFor="email" className="input-label">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  className="styled-input"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                />
-                <label htmlFor="username" className="input-label">Username</label>
-                <input
-                  type="text"
-                  id="username"
-                  name="username"
-                  placeholder="Enter your username"
-                  className="styled-input"
-                  value={formData.username}
-                  onChange={handleInputChange}
-                />
-                <label htmlFor="role" className="input-label">Role</label>
-                <select
-                  id="role"
-                  name="role"
-                  className="styled-input"
-                  value={formData.role}
-                  onChange={handleInputChange}
-                >
-                  <option value="Participant">Participant</option>
-                  <option value="Company">Company</option>
-                  <option value="Mentor">Mentor</option>
-                </select>
-                <label htmlFor="password" className="input-label">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Enter your password"
-                  className="styled-input"
-                  value={formData.password}
-                  onChange={handleInputChange}
-                />
-                <button type="submit" style={{backgroundColor:'#EFCC3D',color:'black'}} className="submit-button">Sign Up</button>
-              </form></Slide>
-            )}
+        </Slide>
+        <div className="login-content">
+          <div className="form-section">
+            <div className="form-header">
+              <button
+                className={isLogin ? 'form-toggle active' : 'form-toggle'}
+                onClick={() => setIsLogin(true)}
+              >
+                تسجيل الدخول
+              </button>
+              <button
+                className={!isLogin ? 'form-toggle active' : 'form-toggle'}
+                onClick={() => setIsLogin(false)}
+              >
+                تسجيل جديد
+              </button>
+            </div>
+            <div className="form-body">
+              {isLogin ? (
+                <Slide direction='right'>
+                  <form onSubmit={handleLoginSubmit}>
+                    <label htmlFor="username" className="input-label">اسم المستخدم</label>
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      placeholder="أدخل اسم المستخدم"
+                      className="styled-input"
+                      value={formData.username}
+                      onChange={handleInputChange}
+                    />
+                    <label htmlFor="password" className="input-label">كلمة المرور</label>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="أدخل كلمة المرور"
+                      className="styled-input"
+                      value={formData.password}
+                      onChange={handleInputChange}
+                    />
+                    <button type="submit" style={{backgroundColor:'#EFCC3D', color:'black'}} className="submit-button">تسجيل الدخول</button>
+                  </form>
+                </Slide>
+              ) : (
+                <Slide direction='right'>
+                  <form onSubmit={handleSignupSubmit}>
+                    <label htmlFor="email" className="input-label">البريد الإلكتروني</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="أدخل البريد الإلكتروني"
+                      className="styled-input"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                    />
+                    <label htmlFor="username" className="input-label">اسم المستخدم</label>
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      placeholder="أدخل اسم المستخدم"
+                      className="styled-input"
+                      value={formData.username}
+                      onChange={handleInputChange}
+                    />
+       <label htmlFor="role" className="input-label">الدور</label>
+<select
+  id="role"
+  name="role"
+  className="styled-input"
+  value={formData.role}
+  onChange={handleInputChange}
+>
+  <option value="Participant">مشارك</option>
+  <option value="Company">شركة</option>
+  <option value="Mentor">موجه</option>
+</select>
+
+                    <label htmlFor="password" className="input-label">كلمة المرور</label>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="أدخل كلمة المرور"
+                      className="styled-input"
+                      value={formData.password}
+                      onChange={handleInputChange}
+                    />
+                    <button type="submit" style={{backgroundColor:'#EFCC3D', color:'black'}} className="submit-button">تسجيل جديد</button>
+                  </form>
+                </Slide>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div></Slide>
+    </Slide>
   );
 }
 

@@ -7,9 +7,9 @@ import { Slide } from "react-awesome-reveal";
 const Header = () =>{
     return(
         <header >
-        <div className="title " style={{direction:'rtl'}} >
+        <div className="title mt-5 " style={{direction:'rtl'}} >
             <Slide duration={1000}>
-            <h1>
+            <h1 >
             مجتمعات مبتكرة لحلول تطوير الأعمال            </h1></Slide>
             <Slide duration={1000} delay={500}>
 

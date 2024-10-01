@@ -35,7 +35,7 @@ const styles = {
     marginBottom: '20px',
   },
   heading: {
-    fontSize: '2.5rem',
+    fontSize: '2rem',
     fontWeight: 'bold',
     color: '#333',
     marginBottom: '20px',
