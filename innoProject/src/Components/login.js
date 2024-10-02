@@ -60,6 +60,7 @@ function Login() {
       console.error('خطأ في تسجيل الدخول:', error.response ? error.response.data : error.message);
       Swal.fire({
         title: 'فشل تسجيل الدخول!',
+        
         text: error.response ? error.response.data.message : 'حدث خطأ أثناء تسجيل الدخول.',
         icon: 'error',
         confirmButtonText: 'موافق',
